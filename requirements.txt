@@ -1,0 +1,15 @@
+nltk
+tqdm
+pandas
+matplotlib
+vllm
+random-word
+nltk
+datasets
+transformers[torch]
+tokenizers
+evaluate
+rouge_score
+sentencepiece
+huggingface_hub
+groq
