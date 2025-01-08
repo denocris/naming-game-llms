@@ -91,7 +91,7 @@ else:
                 answer_generator = GroqLLMAnswerGenerator(model_path, client, temperature)
             else:
                 answer_generator = LLMAnswerGenerator(model_path, temperature)
-            number_of_words, number_of_diff_words, succes_indicator = run_llm_naming_game(num_agents = num_agents, num_steps = num_steps, model_name = model_name, answer_generator=answer_generator, vocabulary = vocabulary)
+            number_of_words, number_of_diff_words, succes_indicator = run_llm_naming_game(num_agents = num_agents, num_steps = num_steps, answer_generator=answer_generator, vocabulary = vocabulary)
             # Save data
             number_of_words_filename = f"num_of_words_{experiment_name}_{model_name}_log_T{temperature}.json"
             number_of_diff_words_filename = f"num_of_diff_words_{experiment_name}_{model_name}_log_T{temperature}.json"

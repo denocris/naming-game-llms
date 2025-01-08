@@ -1,5 +1,6 @@
 import random
 import csv
+import time
 from tqdm import tqdm
 from naminggame.utils import find_first_yes_or_no
 
@@ -49,7 +50,7 @@ def run_deterministic_naming_game(num_agents, num_steps, vocabulary, PRINT=False
     return number_of_words, number_of_diff_words, succes_indicator
 
 ############ LLM NAMING GAME #############
-def run_llm_naming_game(num_agents, num_steps, vocabulary, model_name, answer_generator):
+def run_llm_naming_game(num_agents, num_steps, vocabulary, answer_generator):
     # Initialize dictionaries
     p = {agent: [] for agent in range(num_agents)}  # Dictionary of speakers and listeners
     succes_indicator = [0] * num_steps  # List to store success indicator
@@ -58,6 +59,9 @@ def run_llm_naming_game(num_agents, num_steps, vocabulary, model_name, answer_ge
 
     for k in tqdm(range(num_steps)):
         #print(f"Step no : {k}")
+        if k % 100 == 0 and k != 0:  # Exclude the first step (0)
+            print("Pausing for 30 seconds...")
+            time.sleep(15)
         i = random.randint(0, num_agents - 1) #speaker
         j = random.randint(0, num_agents - 1) #listener
 
