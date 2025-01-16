@@ -10,8 +10,8 @@ groq_api: True
 experiments:
 - name: na5e2-ns1e4
   model_parameters: 
-  - model_path: "llama3-8b-8192" #"mistralai/Mistral-7B-v0.1" #"llama-3.2-3b-preview" #"google-t5/t5-small"   
-  - model_name: "llama3-8b-8192" #"t5-small"
+  - model_path: "llama3-70b-8192" #"mistralai/Mistral-7B-v0.1" #"llama-3.2-3b-preview" #"google-t5/t5-small"   
+  - model_name: "llama3-70b-8192" #"t5-small"
   - temperature: 
       - 1.0
 
