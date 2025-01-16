@@ -59,9 +59,7 @@ def run_llm_naming_game(num_agents, num_steps, vocabulary, answer_generator):
 
     for k in tqdm(range(num_steps)):
         #print(f"Step no : {k}")
-        if k % 50 == 0 and k != 0:  # Exclude the first step (0)
-            print("Pausing for 25 seconds...")
-            time.sleep(25)
+        time.sleep(5)
         i = random.randint(0, num_agents - 1) #speaker
         j = random.randint(0, num_agents - 1) #listener
 
