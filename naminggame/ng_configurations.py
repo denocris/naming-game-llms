@@ -50,7 +50,7 @@ def run_deterministic_naming_game(num_agents, num_steps, vocabulary, PRINT=False
     return number_of_words, number_of_diff_words, succes_indicator
 
 ############ LLM NAMING GAME #############
-def run_llm_naming_game(num_agents, num_steps, vocabulary, answer_generator):
+def run_llm_naming_game(num_agents, num_steps, vocabulary, answer_generator, print_answers=True):
     # Initialize dictionaries
     p = {agent: [] for agent in range(num_agents)}  # Dictionary of speakers and listeners
     succes_indicator = [0] * num_steps  # List to store success indicator
@@ -59,7 +59,7 @@ def run_llm_naming_game(num_agents, num_steps, vocabulary, answer_generator):
 
     for k in tqdm(range(num_steps)):
         #print(f"Step no : {k}")
-        time.sleep(5)
+        #time.sleep(5)
         i = random.randint(0, num_agents - 1) #speaker
         j = random.randint(0, num_agents - 1) #listener
 
@@ -79,7 +79,8 @@ def run_llm_naming_game(num_agents, num_steps, vocabulary, answer_generator):
         prompt_text = answer_generator.get_prompt(instruction)
         answer = answer_generator.generate_answer(prompt_text)
         # Extract yes/no from the output  
-        answer = find_first_yes_or_no(answer)
+        #answer = find_first_yes_or_no(answer)
+        #if print_answers: print("answer NG:", answer)
 
         # if the word is in both in speaker and listener
         if answer == "yes":
@@ -96,7 +97,7 @@ def run_llm_naming_game(num_agents, num_steps, vocabulary, answer_generator):
     return number_of_words, number_of_diff_words, succes_indicator
 
 ############ LLM NAMING GAME #############
-def run_llm_naming_game_old(num_agents, num_steps, vocabulary, model_name, answer_generator):
+def deprecated_run_llm_naming_game(num_agents, num_steps, vocabulary, model_name, answer_generator):
     # Initialize dictionaries
     p = {agent: [] for agent in range(num_agents)}  # Dictionary of speakers and listeners
     succes_indicator = [0] * num_steps  # List to store success indicator

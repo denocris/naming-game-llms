@@ -28,17 +28,15 @@ class LLMAnswerGenerator:
     def generate_answer(self, prompt_text):
         inputs = self.tokenizer(prompt_text, return_tensors="pt")
         outputs = self.model.generate(**inputs, temperature=self.temperature, max_new_tokens=1)
-        answer = self.tokenizer.decode(outputs[0])
+        # [-1] is necessary since model.generate() outputs prompt + answer
+        answer_tmp = self.tokenizer.decode(outputs[0][-1])
         # T5 cleaning
         #cleaned_answer = answer.replace("<pad>", "").replace("</s>", "").lower().replace(' ', '')
         # Llama-3.2-1B cleaning 
-        cleaned_answer = answer.replace("<|begin_of_text|>", "").lower()
+        answer = answer_tmp.replace("<|begin_of_text|>", "").lower()
         # Extracting "yes" or "no" using string manipulation
-        print("---- Start Answers ----")
-        print(answer)
-        print(cleaned_answer)
-        print("---- Stop Answers ----")
-        return cleaned_answer
+        #print("answer LLM:", answer)
+        return answer
     
 ### Model Utils 
 class GroqLLMAnswerGenerator:
