@@ -13,3 +13,4 @@ rouge_score
 sentencepiece
 huggingface_hub
 groq
+ollama

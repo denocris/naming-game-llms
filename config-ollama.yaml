@@ -1,0 +1,16 @@
+num_agents: 500 #1000
+num_steps: 150000 #100_000
+max_words: 0 #0
+vocab_size: 10_000
+seed: 0
+deterministic: False
+groq_api: False #True
+service: ollama
+
+
+experiments:
+- name: na5e2-ns1p5e5
+  model_parameters: 
+  - model_path: mistral:7b #llama3.1:8b #phi4-mini:3.8b
+  - model_name: mistral:7b #llama3.1:8b #phi4-mini:3.8b
+  - temperature: [0.0, 1.0, 2.0]

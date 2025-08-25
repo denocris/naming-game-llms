@@ -2,7 +2,6 @@ import random
 import csv
 import time
 from tqdm import tqdm
-from naminggame.utils import find_first_yes_or_no
 
 ############ DETERMINISTIC NAMING GAME #############
 def run_deterministic_naming_game(num_agents, num_steps, vocabulary, PRINT=False):
@@ -78,6 +77,8 @@ def run_llm_naming_game(num_agents, num_steps, vocabulary, answer_generator, pri
         instruction = f"Your words are: {p[i]}. Do we add {chosen_word} to the list?"
         prompt_text = answer_generator.get_prompt(instruction)
         answer = answer_generator.generate_answer(prompt_text)
+        #print(prompt_text[0]['content']+prompt_text[1]['content'])
+        #print(answer)
         # Extract yes/no from the output  
         #answer = find_first_yes_or_no(answer)
         #if print_answers: print("answer NG:", answer)
@@ -90,6 +91,10 @@ def run_llm_naming_game(num_agents, num_steps, vocabulary, answer_generator, pri
         elif answer == "no":
             p[j] = p[j] + [chosen_word]
             succes_indicator[k] = 0
+        else:
+            "If anything else, consider it as a no"
+            p[j] = p[j] + [chosen_word]
+            succes_indicator[k] = 0
 
         state_k = {agent: p[agent] for agent in range(num_agents)}
         number_of_words[k] = len([word for sublist in state_k.values() for word in sublist])
@@ -97,7 +102,7 @@ def run_llm_naming_game(num_agents, num_steps, vocabulary, answer_generator, pri
     return number_of_words, number_of_diff_words, succes_indicator
 
 ############ LLM NAMING GAME #############
-def deprecated_run_llm_naming_game(num_agents, num_steps, vocabulary, model_name, answer_generator):
+def ___deprecated_run_llm_naming_game(num_agents, num_steps, vocabulary, model_name, answer_generator):
     # Initialize dictionaries
     p = {agent: [] for agent in range(num_agents)}  # Dictionary of speakers and listeners
     succes_indicator = [0] * num_steps  # List to store success indicator
