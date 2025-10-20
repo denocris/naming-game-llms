@@ -1,16 +1,15 @@
-num_agents: 500 #1000
-num_steps: 150000 #100_000
+num_agents: 10 #150 #1000
+num_steps:  100 #70000 #100_000
 max_words: 0 #0
 vocab_size: 10_000
-seed: 0
 deterministic: False
 groq_api: False #True
 service: ollama
 
-
 experiments:
-- name: na5e2-ns1p5e5
+- name: test #na1p5e2-ns7e4
   model_parameters: 
-  - model_path: mistral:7b #llama3.1:8b #phi4-mini:3.8b
-  - model_name: mistral:7b #llama3.1:8b #phi4-mini:3.8b
-  - temperature: [0.0, 1.0, 2.0]
+  - model_path: phi4-mini:3.8b #mistral:7b #llama3.1:8b #phi4-mini:3.8b
+  - model_name: phi4-mini:3.8b #mistral:7b #llama3.1:8b #phi4-mini:3.8b
+  - seed: [1003]
+  - temperature: [0.5] #[0.005, 0.01, 0.03, 0.1, 0.5, 1.0, 1.5, 2.0]

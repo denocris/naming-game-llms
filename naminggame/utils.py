@@ -149,6 +149,13 @@ def get_temperatures(experiment_params):
             temperatures = param["temperature"]
     return temperatures
 
+def get_seeds(experiment_params):
+    seeds = [0]
+    for param in experiment_params:
+        if "seed" in param:
+            seeds = param["seed"]
+    return seeds
+
 ### GET YES/NO FROM UNPREDICTABLE OUTPUT
 def ____deprecated_find_first_yes_or_no(text):
     # Convert text to lowercase to handle case insensitivity
