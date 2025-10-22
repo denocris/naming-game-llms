@@ -86,6 +86,8 @@ class OllamaLLMAnswerGenerator:
         Constructing a prompt template with a default system prompt and a dynamic instruction.
         '''
         DEFAULT_SYSTEM_PROMPT = "You are an agent with your own language and vocabulary. You can and must reply with yes or no. "
+        #DEFAULT_SYSTEM_PROMPT = "You are an agent with your own language and vocabulary. You must reply only with yes or no. "
+
         #SYSTEM_PROMPT = DEFAULT_SYSTEM_PROMPT
         prompt_template = [
                     # Set an optional system message. This sets the behavior of the
@@ -106,7 +108,7 @@ class OllamaLLMAnswerGenerator:
         prompt_text = prompt_text[0]['content']+prompt_text[1]['content']
         response = ollama.generate(model=self.checkpoint, 
                          prompt=prompt_text, 
-                         options={"temperature": self.temperature, "num_predict": 1})
+                         options={"temperature": self.temperature, "num_predict": 2})
         cleaned_answer = response['response'].strip().lower()
         return cleaned_answer
 
