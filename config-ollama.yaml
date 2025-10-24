@@ -1,4 +1,4 @@
-num_agents: 150 #1000
+num_agents: 150 #150 #1000
 num_steps:  90000 #100_000
 max_words: 0 #0
 vocab_size: 10_000
@@ -9,7 +9,7 @@ service: ollama
 experiments:
 - name: test #na1p5e2-ns9e4
   model_parameters: 
-  - model_path: mistral-small3.2:24b #phi4-mini:3.8b #llama3.1:8b 
-  - model_name: mistral-small3.2:24b #phi4-mini:3.8b #llama3.1:8b 
+  - model_path: gemma2:2b  #mistral-small3.2:24b #phi4-mini:3.8b #llama3.1:8b 
+  - model_name: gemma2:2b  #mistral-small3.2:24b #phi4-mini:3.8b #llama3.1:8b 
   - seed: [0]
   - temperature: [1.95] #[0.005, 0.01, 0.03, 0.1, 0.5, 1.0, 1.5, 2.0]

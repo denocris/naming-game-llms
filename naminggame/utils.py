@@ -108,7 +108,7 @@ class OllamaLLMAnswerGenerator:
         prompt_text = prompt_text[0]['content']+prompt_text[1]['content']
         response = ollama.generate(model=self.checkpoint, 
                          prompt=prompt_text, 
-                         options={"temperature": self.temperature, "num_predict": 2})
+                         options={"temperature": self.temperature, "num_predict": 1 })
         cleaned_answer = response['response'].strip().lower()
         return cleaned_answer
 

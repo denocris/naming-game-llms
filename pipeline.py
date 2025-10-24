@@ -120,6 +120,7 @@ else:
                     answer_generator = OllamaLLMAnswerGenerator(model_path, temperature)
                 number_of_words, number_of_diff_words, succes_indicator = run_llm_naming_game(num_agents = num_agents, num_steps = num_steps, answer_generator=answer_generator, vocabulary = vocabulary)
                 # Save data
+                model_name = model_name.replace(':', "-")
                 number_of_words_filename = f"num_of_words_seed-{seed}_{experiment_name}_{model_name}_log_T-{temperature}.json"
                 number_of_diff_words_filename = f"num_of_diff_words_seed-{seed}_{experiment_name}_{model_name}_log_T-{temperature}.json"
                 success_filename = f"success_seed-{seed}_{experiment_name}_{model_name}_log_T-{temperature}.csv"
