@@ -158,6 +158,11 @@ def get_seeds(experiment_params):
             seeds = param["seed"]
     return seeds
 
+def save_success_pi_phi(file_name, step: int, success: float, pi_true_positive: int, phi_false_positive: int, pi_false_negative: int, phi_true_negative: int):
+    """Save magnetization for current step immediately to file."""
+    with open(file_name, 'a') as f:
+        f.write(f"{step}, {success}, {pi_true_positive}, {phi_false_positive}, {pi_false_negative}, {phi_true_negative}\n")
+
 ### GET YES/NO FROM UNPREDICTABLE OUTPUT
 def ____deprecated_find_first_yes_or_no(text):
     # Convert text to lowercase to handle case insensitivity

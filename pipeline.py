@@ -49,8 +49,11 @@ print(f"Number of steps: {num_steps}")
 print(f"Max words: {max_words}")
 
 ############ INITIALIZE RESULTS DIRECTORY #############
-if not os.path.exists('results'):
-    os.makedirs('results')
+if not os.path.exists('results_ji'):
+    os.makedirs('results_ji')
+
+if not os.path.exists('pi_and_phi'):
+    os.makedirs('pi_and_phi')
 
 ############ GENERATE AGENT VOCABULARY #############
 print("Generating agent vocabulary ...")
@@ -118,20 +121,36 @@ else:
                     answer_generator = LLMAnswerGenerator(model_path, temperature)
                 elif config['service']=='ollama':
                     answer_generator = OllamaLLMAnswerGenerator(model_path, temperature)
-                number_of_words, number_of_diff_words, succes_indicator = run_llm_naming_game(num_agents = num_agents, num_steps = num_steps, answer_generator=answer_generator, vocabulary = vocabulary)
+                number_of_words, number_of_diff_words, succes_indicator, pi_true_positive, phi_false_positive, pi_false_negative, phi_true_negative = run_llm_naming_game(num_agents = num_agents, num_steps = num_steps, answer_generator=answer_generator, vocabulary = vocabulary)
                 # Save data
                 model_name = model_name.replace(':', "-")
                 number_of_words_filename = f"num_of_words_seed-{seed}_{experiment_name}_{model_name}_log_T-{temperature}.json"
                 number_of_diff_words_filename = f"num_of_diff_words_seed-{seed}_{experiment_name}_{model_name}_log_T-{temperature}.json"
                 success_filename = f"success_seed-{seed}_{experiment_name}_{model_name}_log_T-{temperature}.csv"
+                
+                pi_true_positive_filename = f"pi_true_positive_seed-{seed}_{experiment_name}_{model_name}_log_T-{temperature}.csv"
+                phi_false_positive_filename = f"phi_false_positive_seed-{seed}_{experiment_name}_{model_name}_log_T-{temperature}.csv"
+                pi_false_negative_filename = f"pi_false_negative_seed-{seed}_{experiment_name}_{model_name}_log_T-{temperature}.csv"
+                phi_true_negative_filename = f"phi_true_negative_seed-{seed}_{experiment_name}_{model_name}_log_T-{temperature}.csv"
 
                 #df_state = pd.DataFrame.from_dict(state)
                 df_success = pd.DataFrame.from_dict(succes_indicator)
                 df_number_of_words = pd.DataFrame.from_dict(number_of_words, orient='index', columns=['word_count'])
                 df_number_of_diff_words = pd.DataFrame.from_dict(number_of_diff_words, orient='index', columns=['diff_word_count'])
+
+                df_pi_true_positive = pd.DataFrame.from_dict(pi_true_positive)
+                df_phi_false_positive = pd.DataFrame.from_dict(phi_false_positive)
+                df_pi_false_negative = pd.DataFrame.from_dict(pi_false_negative)
+                df_phi_true_negative = pd.DataFrame.from_dict(phi_true_negative)
+                
                 df_number_of_words.to_json("./results/" + number_of_words_filename) 
                 df_number_of_diff_words.to_json("./results/" + number_of_diff_words_filename) 
                 df_success.to_csv("./results/" + success_filename) 
+                
+                df_pi_true_positive.to_csv("./pi_and_phi/" + pi_true_positive_filename) 
+                df_phi_false_positive.to_csv("./pi_and_phi/" + phi_false_positive_filename) 
+                df_pi_false_negative.to_csv("./pi_and_phi/" + pi_false_negative_filename) 
+                df_phi_true_negative.to_csv("./pi_and_phi/" + phi_true_negative_filename) 
     
 
 
