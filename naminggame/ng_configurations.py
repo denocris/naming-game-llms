@@ -99,24 +99,23 @@ def run_llm_naming_game(num_agents, num_steps, vocabulary, answer_generator, pri
 
         # if the word is in both in speaker and listener
         if answer == "yes":
-            #print("1")
-            p[i] = [chosen_word] #speaker
-            p[j] = [chosen_word] #listener
-            succes_indicator[k] = 1
             if chosen_word in p[j]:
                 pi_true_positive[k]=1 
             else:
                 phi_false_positive[k]=1
+            # Apply NG rule
+            p[i] = [chosen_word] #speaker
+            p[j] = [chosen_word] #listener
+            succes_indicator[k] = 1
         elif answer == "no":
-            #print("2")
-            p[j] = list(set(p[j] + [chosen_word]))
-            succes_indicator[k] = 0
             if chosen_word in p[j]:
                 pi_false_negative[k]=1 
             else:
                 phi_true_negative[k]=1
+            # Apply NG rule
+            p[j] = list(set(p[j] + [chosen_word]))
+            succes_indicator[k] = 0
         else:
-            #print("3")
             "If anything else, consider it as a no"
             p[j] = list(set(p[j] + [chosen_word]))
             succes_indicator[k] = 0
