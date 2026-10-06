@@ -19,9 +19,7 @@ The deterministic NG is $(\pi, \phi) = (1, 0)$, and the stochastic negotiation m
 
 1. A complete-graph mean-field theory of the two-rate dynamics. Its two-word sector gives the instability condition
 
-   $$
-   3\pi - 2\phi - 1 > 0,
-   $$
+   $$3\pi - 2\phi - 1 > 0,$$
 
    which reduces to the known threshold $\beta_c = 1/3$ at $\phi = 0$ and defines a critical line in the $(\pi, \phi)$ plane. The exact mean-field hierarchy for an arbitrary vocabulary and an inventory-size closure are given in an appendix.
 2. Across three open-weight architectures, the measured $(\pi, \phi)$ place the listeners in three distinct regimes (permissive, near-deterministic, conservative), each with its own macroscopic signature, including an inverted temperature ordering of the consensus time in the conservative case.
