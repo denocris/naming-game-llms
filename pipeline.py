@@ -143,9 +143,9 @@ else:
                 df_pi_false_negative = pd.DataFrame.from_dict(pi_false_negative)
                 df_phi_true_negative = pd.DataFrame.from_dict(phi_true_negative)
                 
-                df_number_of_words.to_json("./results/" + number_of_words_filename) 
-                df_number_of_diff_words.to_json("./results/" + number_of_diff_words_filename) 
-                df_success.to_csv("./results/" + success_filename) 
+                df_number_of_words.to_json("./results_ji/" + number_of_words_filename) 
+                df_number_of_diff_words.to_json("./results_ji/" + number_of_diff_words_filename) 
+                df_success.to_csv("./results_ji/" + success_filename) 
                 
                 df_pi_true_positive.to_csv("./pi_and_phi/" + pi_true_positive_filename) 
                 df_phi_false_positive.to_csv("./pi_and_phi/" + phi_false_positive_filename) 

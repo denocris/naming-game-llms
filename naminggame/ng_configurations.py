@@ -92,16 +92,17 @@ def run_llm_naming_game(num_agents, num_steps, vocabulary, answer_generator, pri
         answer = answer_generator.generate_answer(prompt_text)
         #print(prompt_text[0]['content']+prompt_text[1]['content'])
         #print("instruction:", instruction)
-        #print("answer:", answer)
+        print("answer:", answer)
         # Extract yes/no from the output  
         #answer = find_first_yes_or_no(answer)
         #if print_answers: print("answer NG:", answer)
 
-        # if the word is in both in speaker and listener
         if answer == "yes":
             if chosen_word in p[j]:
+                # pi(T) = P(YES | member)  - Member case (the listener already has the speaker word)
                 pi_true_positive[k]=1 
             else:
+                # phi(T) = P(YES | non-member) - Non-member case (the listener does not have the speaker word)
                 phi_false_positive[k]=1
             # Apply NG rule
             p[i] = [chosen_word] #speaker
