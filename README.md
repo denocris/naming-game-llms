@@ -17,11 +17,7 @@ The deterministic NG is $(\pi, \phi) = (1, 0)$, and the stochastic negotiation m
 
 ## Main results
 
-1. A complete-graph mean-field theory of the two-rate dynamics. Its two-word sector gives the instability condition
-
-   $$3\pi - 2\phi - 1 > 0,$$
-
-   which reduces to the known threshold $\beta_c = 1/3$ at $\phi = 0$ and defines a critical line in the $(\pi, \phi)$ plane. The exact mean-field hierarchy for an arbitrary vocabulary and an inventory-size closure are given in an appendix.
+1. A complete-graph mean-field theory of the two-rate dynamics. Its two-word sector gives the instability condition $3\pi - 2\phi - 1 > 0$, which reduces to the known threshold $\beta_c = 1/3$ at $\phi = 0$ and defines a critical line in the $(\pi, \phi)$ plane. The exact mean-field hierarchy for an arbitrary vocabulary and an inventory-size closure are given in an appendix.
 2. Across three open-weight architectures, the measured $(\pi, \phi)$ place the listeners in three distinct regimes (permissive, near-deterministic, conservative), each with its own macroscopic signature, including an inverted temperature ordering of the consensus time in the conservative case.
 3. Finite-size scaling and temperature-response measurements for $N$ between 50 and 150. The effective exponent $\beta(T)$ in $t_{\rm conv} \sim N^{\beta}$ and the temperature sensitivity $\alpha$ in $t_c \sim e^{\alpha T}$ are architecture-dependent. We state explicitly that these are effective exponents over a limited size range and not asymptotic ones.
 
@@ -60,8 +56,8 @@ Prompt used by the listener:
 
 ## Requirements
 
-- Python [VERSION] and the packages in `[requirements.txt / environment.yml]`
-- [Ollama](https://ollama.com) [VERSION], with the models pulled:
+- Python and the packages in `[requirements.txt / environment.yml]`
+- [Ollama](https://ollama.com), with the models pulled:
 
 ```bash
 ollama pull llama3.1:8b
@@ -107,7 +103,7 @@ Update the entry with the journal reference once the paper is published.
 
 ## License
 
-Code: [MIT / Apache-2.0]. Data: [CC BY 4.0].
+Code: MIT. Data: [CC BY 4.0].
 
 ## Contact
 
