@@ -67,17 +67,10 @@ ollama pull phi3:14b
 
 Model tags do not pin the weights. The digests used for the paper are listed in `[FILE]`.
 
-## Repository structure
-
-```
-[FILL IN: e.g. src/ (simulation code), scripts/ (figure scripts), configs/, data/, figures/]
-```
-
 ## Reproducing the results
 
 ```bash
-# [FILL IN: commands to run a simulation, e.g. one model, one temperature]
-# [FILL IN: commands to regenerate each figure]
+nohup python3 pipeline.py --config config-ollama.yaml > nohup_ollama.log &
 ```
 
 ## Data
@@ -103,7 +96,7 @@ Update the entry with the journal reference once the paper is published.
 
 ## License
 
-Code: MIT. Data: [CC BY 4.0].
+Code: MIT. Data: CC BY 4.0.
 
 ## Contact
 
