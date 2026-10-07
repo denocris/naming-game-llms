@@ -1,0 +1,65 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper below."
+type: software
+title: "Code for: Microscopic dynamics of consensus formation in multi-agent LLM Naming Games"
+authors:
+  - family-names: "De Nobili"
+    given-names: "Cristiano"
+    orcid: "https://orcid.org/0000-0002-8429-1831"
+    email: "cristiano@critiqality.ai"
+    affiliation: "Critiqality, Milan, Italy"
+  - family-names: "Iyer"
+    given-names: "Vijayasri"
+    affiliation: "Independent Researcher"
+  - family-names: "Codello"
+    given-names: "Alessandro"
+    affiliation: "DSMN, Ca' Foscari University of Venice, Italy"
+  - family-names: "Burioni"
+    given-names: "Raffaella"
+    affiliation: "Università degli Studi di Parma, Italy"
+license: MIT
+version: "1.0.0"
+date-released: "2026-10-06"
+# Fill in once the repository and the Zenodo record exist:
+repository-code: "https://github.com/denocris/naming-game-llms"
+# doi: "10.5281/zenodo.<code-record-number>"
+keywords:
+  - Naming Game
+  - large language models
+  - multi-agent systems
+  - consensus
+  - mean-field theory
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "De Nobili"
+      given-names: "Cristiano"
+      orcid: "https://orcid.org/0000-0002-8429-1831"
+    - family-names: "Iyer"
+      given-names: "Vijayasri"
+    - family-names: "Codello"
+      given-names: "Alessandro"
+    - family-names: "Burioni"
+      given-names: "Raffaella"
+  title: "Microscopic dynamics of consensus formation in multi-agent LLM Naming Games"
+  journal: "arXiv:2608.02178 [physics.soc-ph]"
+  year: 2026
+  url: "https://arxiv.org/abs/2608.02178"
+references:
+  - type: dataset
+    title: "Data for: Microscopic dynamics of consensus formation in multi-agent LLM Naming Games"
+    authors:
+      - family-names: "De Nobili"
+        given-names: "Cristiano"
+        orcid: "https://orcid.org/0000-0002-8429-1831"
+      - family-names: "Iyer"
+        given-names: "Vijayasri"
+      - family-names: "Codello"
+        given-names: "Alessandro"
+      - family-names: "Burioni"
+        given-names: "Raffaella"
+    year: 2026
+    doi: "10.5281/zenodo.23207716"
+    url: "https://doi.org/10.5281/zenodo.23207716"
+    publisher:
+      name: "Zenodo"
