@@ -75,7 +75,7 @@ nohup python3 pipeline.py --config config-ollama.yaml > nohup_ollama.log &
 
 ## Data
 
-The data supporting the results are archived on Zenodo: [DOI]. They include the per-step logs from which $\pi(t)$, $\phi(t)$, $N_d(t)$, $\bar{k}(t)$ and the consensus times were computed. [DESCRIBE FILE FORMAT AND NAMING.]
+The data supporting the results are archived on Zenodo: 10.5281/zenodo.23207716. They include the per-step logs from which $\pi(t)$, $\phi(t)$, $N_d(t)$, $\bar{k}(t)$ and the consensus times were computed.
 
 ## Citation
 
