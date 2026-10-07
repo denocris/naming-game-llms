@@ -5,6 +5,9 @@ Code and data for the paper *Microscopic dynamics of consensus formation in mult
 [![arXiv](https://img.shields.io/badge/arXiv-2608.02178-b31b1b.svg)](https://arxiv.org/abs/2608.02178)
 <!-- After the Zenodo release, add: [![DOI](https://zenodo.org/badge/DOI/<DOI>.svg)](https://doi.org/<DOI>) -->
 
+Data DOI: https://doi.org/10.5281/zenodo.23207716
+Code DOI: https://doi.org/10.5281/zenodo.23209083
+
 ## What the paper does
 
 The Naming Game (NG) is the minimal model of how a population bootstraps a shared convention through pairwise negotiation. We keep its topology and update rule but replace the listener's deterministic inventory check with a single-token call to a Large Language Model (LLM) at decoding temperature $T$. Each interaction is then fully characterized by two conditional acceptance rates,
