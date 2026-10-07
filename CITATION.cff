@@ -19,7 +19,7 @@ authors:
     affiliation: "Università degli Studi di Parma, Italy"
 license: MIT
 version: "1.0.0"
-date-released: "2026-10-06"
+date-released: "2026-10-07"
 # Fill in once the repository and the Zenodo record exist:
 repository-code: "https://github.com/denocris/naming-game-llms"
 # doi: "10.5281/zenodo.<code-record-number>"
